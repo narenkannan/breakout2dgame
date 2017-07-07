@@ -1,9 +1,5 @@
-define('game', ['canvas'], function (area) {
-    //var canvas = document.getElementById("myCanvas");
-    //var ctx = canvas.getContext("2d");
-    var ballRadius = 10;
-    var x = area.canvas.width / 2;
-    var y = area.canvas.height - 30;
+define('game', ['canvas','ball'], function (area,ball) {
+
     var dx = 2;
     var dy = -2;
     var paddleHeight = 10;
@@ -60,7 +56,7 @@ define('game', ['canvas'], function (area) {
             for (r = 0; r < brickRowCount; r++) {
                 var b = bricks[c][r];
                 if (b.status == 1) {
-                    if (x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight) {
+                    if (area.x > b.x && area.x < b.x + brickWidth && area.y > b.y && area.y < b.y + brickHeight) {
                         dy = -dy;
                         b.status = 0;
                         score++;
@@ -74,13 +70,7 @@ define('game', ['canvas'], function (area) {
         }
     }
 
-    function drawBall() {
-        area.ctx.beginPath();
-        area.ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
-        area.ctx.fillStyle = "#0095DD";
-        area.ctx.fill();
-        area.ctx.closePath();
-    }
+
     function drawPaddle() {
         area.ctx.beginPath();
         area.ctx.rect(paddleX, area.canvas.height - paddleHeight, paddleWidth, paddleHeight);
@@ -119,20 +109,20 @@ define('game', ['canvas'], function (area) {
     function draw() {
         area.ctx.clearRect(0, 0, area.canvas.width, area.canvas.height);
         drawBricks();
-        drawBall();
+        ball.drawBall();
         drawPaddle();
         drawScore();
         drawLives();
         collisionDetection();
 
-        if (x + dx > area.canvas.width - ballRadius || x + dx < ballRadius) {
+        if (area.x + dx > area.canvas.width - ball.ballRadius || area.x + dx < ball.ballRadius) {
             dx = -dx;
         }
-        if (y + dy < ballRadius) {
+        if (area.y + dy < ball.ballRadius) {
             dy = -dy;
         }
-        else if (y + dy > area.canvas.height - ballRadius) {
-            if (x > paddleX && x < paddleX + paddleWidth) {
+        else if (area.y + dy > area.canvas.height - ball.ballRadius) {
+            if (area.x > paddleX && area.x < paddleX + paddleWidth) {
                 dy = -dy;
             }
             else {
@@ -142,8 +132,8 @@ define('game', ['canvas'], function (area) {
                     document.location.reload();
                 }
                 else {
-                    x = area.canvas.width / 2;
-                    y = area.canvas.height - 30;
+                    area.x = area.canvas.width / 2;
+                    area.y = area.canvas.height - 30;
                     dx = 3;
                     dy = -3;
                     paddleX = (area.canvas.width - paddleWidth) / 2;
@@ -158,8 +148,8 @@ define('game', ['canvas'], function (area) {
             paddleX -= 7;
         }
 
-        x += dx;
-        y += dy;
+        area.x += dx;
+        area.y += dy;
         requestAnimationFrame(draw);
     }
 
