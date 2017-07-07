@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Javascript Workshop - Breakout game using multiple javascript files</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    
+    canvas {
+      background: #eee;
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+  <style src="style.css"></style>
+</head>
+
+<body>
+
+  <canvas id="myCanvas" width="480" height="320"></canvas>
+  <script src="canvas.js"></script>
+  <script src="brick.js"></script>
+  <script src="paddle.js"></script>
+  <script src="keyboard.handler.js"></script>
+  <script src="mouse.handler.js"></script>
+  <script src="lives.js"></script>
+  <script src="score.js"></script>
+  <script src="ball.js"></script>
+  <script src="game.js"></script>
+</body>
+
+</html>
