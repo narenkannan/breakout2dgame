@@ -1,4 +1,4 @@
 module.exports = {
   "port": 80,
-  "server": { "baseDir": "./amd" }
+  "server": { "baseDir": "./commonjs" }
 };
