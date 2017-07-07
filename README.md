@@ -2,7 +2,7 @@
 
 ## 2D breakout game (Pure JavaScript/CommonJs/AMD/ES6)
 
-#### The complete tutorial on game development using pure javascript is available on 
+#### The content in this repo is extracted from 
 
 https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript
 
@@ -15,12 +15,12 @@ The purpose of this repo is to convert the breakout game(2D) from pure Javascrip
 #### This repo doesnt contains information on
 
 * Game development
-* Core Javascript.
+* Core Javascript and syntax.
 
 #### Intended Audiances:
-* Modern web developers
-* Core Javascript programmers.
-* Javascript trainers
+* who wants to be a Modern web developers
+* Javascript programmers upgrading to ES6.
+* trainers
 
 #### Prerequisite:
 * Basic Javascript knowledge.
