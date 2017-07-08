@@ -17,11 +17,6 @@ The purpose of this repo is to convert the breakout game(2D) from pure Javascrip
 * Game development
 * Core Javascript and syntax.
 
-#### Intended Audiances:
-* who wants to be a Modern web developers
-* Javascript programmers upgrading to ES6.
-* trainers
-
 #### Prerequisite:
 * Basic Javascript knowledge.
 
