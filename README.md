@@ -24,3 +24,31 @@ The purpose of this repo is to convert the breakout game(2D) from pure Javascrip
 
 #### Prerequisite:
 * Basic Javascript knowledge.
+
+# JavaScript Modules
+
+## Introduction
+
+  * What is Javascript ?
+  
+  * Javascript application in real life
+  
+  * What if there is no Javascript !
+  
+  * Javascript execution context
+  
+  * Rich Internet applications & Single page apps.
+  
+  * Understanding JavaScript modules
+  
+  * Native Javascript support for modules
+  
+  * Design Patterns to the rescue.
+  
+  * Module and Revealing Module pattern
+  
+  * AMD & CommonJs
+  
+  * Module loaders
+  
+  * ES6 Modules
